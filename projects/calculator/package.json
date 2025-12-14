@@ -1,6 +1,7 @@
 {
   "name": "calculator",
   "private": true,
+  "homepage": "https://yakov-212.github.io/projects/calculator/dist",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
