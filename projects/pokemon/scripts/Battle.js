@@ -225,7 +225,7 @@ function moveOrder(move,pokemon,move2,pokemon2,first){
         palDefeated()
     }
     else
-        secondMove(move2,pokemon2,pokemon,first)
+        clickBContinue(()=>secondMove(move2,pokemon2,pokemon,first))
     
 }
 
@@ -239,7 +239,7 @@ function secondMove(move2,pokemon2,pokemon,first){
         palDefeated()
     }
     else
-        clickBContinue(changeToEncounterMenu)
+        changeToEncounterMenu()
 }
 function clickBContinue(func){
     controls[2].addEventListener("click",func,{once:true})
