@@ -3,6 +3,7 @@ import encounterEventListener,{createPokemon} from "./scripts/eventListeners/enc
 import listeners from "./scripts/eventListeners/EventListners.js";
 import addEvent from "./scripts/eventListeners/AddEvent.js";
 import setMessage from "./scripts/SetMessage.js";
+import Pokemon from "./Pokemon.js";
 
 const starters = ['Bulbasaur','Charmander','Squirtle','']
 
@@ -37,26 +38,9 @@ if (!player.pokemon.length){
     }
 }
 else{
-
     startGame()
-    async function fromJson(pokemon){
-        return await createPokemon(pokemon.name,pokemon.level)
-    }
-    player.pokemon.map(pokemon => {
-        const tempMoves = pokemon.currentMoves;
-        const newPokemon = fromJson(pokemon);
-        newPokemon.currentMoves = tempMoves
-        return newPokemon
-    })
-    await Promise.all(player.pokemon)
-    if(player.box.length){
-        player.box.map(pokemon => {
-            const tempMoves = pokemon.currentMoves;
-            const newPokemon = fromJson(pokemon);
-            newPokemon.currentMoves = tempMoves
-            return newPokemon
-        })
-        await Promise.all(boxPromises)
-    }
+    player.pokemon.forEach(pokemon => Object.setPrototypeOf(pokemon,Pokemon.prototype))
+    if(player.box.length)
+        player.box.forEach(pokemon => Object.setPrototypeOf(pokemon,Pokemon.prototype))
 }
     

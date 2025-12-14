@@ -235,7 +235,7 @@ const listeners = (function() {
     }())
     return{
         start, 
-        run: routesListener.areaBack, 
+        run: ()=>{routesListener.areaBack();save()}, 
         back: routesListener.toMainMenu, 
         heal: pokeCenterListener.heal,
         changeToPokeCenter: pokeCenterListener.centerEvent

@@ -84,8 +84,7 @@ function capture(e){
             listeners.run();
             battleScreen.style.display = 'none';
             //setMessage
-        })
-        save() 
+        }) 
     }
     else{
         setMessage(`the ball shook ${shakes} time${shakes===1?'':'s'} and then broke open`)
@@ -159,7 +158,6 @@ function run() {
             listeners.run()
             battleScreen.style.display = 'none';
             controls[0].innerText = 'back'
-            save()
         })
     }
     else{
@@ -227,7 +225,7 @@ function moveOrder(move,pokemon,move2,pokemon2,first){
         palDefeated()
     }
     else
-        clickBContinue(() =>secondMove(move2,pokemon2,pokemon,first))
+        secondMove(move2,pokemon2,pokemon,first)
     
 }
 
@@ -267,7 +265,6 @@ function palDefeated(){
             clickBContinue(switchLead)
         })
     }
-    save()
 }
 function opDefeated(){
     palp.exp += Math.ceil((1.5*encOp.level*encOp.data.base_experience)/7)
@@ -293,7 +290,6 @@ function opDefeated(){
         else
             clickBContinue(() => {listeners.run();;battleScreen.style.display = 'none'})//setMessage
     })
-    save()
 }
 function leveledUp(){
     
@@ -333,6 +329,11 @@ function learnNewMove(move){
                 listeners.run();//setMessage
                 battleScreen.style.display = 'none'
             }))
+            addEvent(controls[0],()=>{
+                listeners.run()
+                battleScreen.style.display = 'none'
+                setMessage('')
+            })
         }
 
     })
