@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+    <style>
+
+        #battle{
+            display:none;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        #top-screen{
+            height: 190px;
+        }
+        #screen{
+            text-align: center;
+        }
+        .container{
+            display:flex;
+            height: 96px;
+            align-items: flex-start;}
+
+        #messages{
+            height: 38px;
+            flex-shrink: 0;
+            width: 99%;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 0 0 5px 5px;
+            overflow-y: auto;
+            overflow-x: none;
+        }
+        img{
+            
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .info{
+            
+            border-radius: 5px;
+
+            text-align: start;
+        }
+        #info-op{
+            margin-left: 5px;
+            margin-top:3px
+        }
+        #info-pal{
+
+            align-self: end;
+            
+            margin-bottom:5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="console">
+        <div id="screen">
+            <div id="top-screen">
+                <div id="battle">
+                    <div class="info" id="info-op">lv:<span id="op-level">7</span> hp:<span id="op-health">100/100</span></div>
+                    <div class="container" id="op"><img src="" alt="" ></div>
+                    <div class="container" id="pal"><img src="" alt="" ></div>
+                    <div class="info" id="info-pal">lv:<span id="pal-level">7</span> hp:<span id="pal-hp">100/100</span></div>
+                </div>
+            </div>
+            <div id="messages">Welcome to the wonderfull world of Console Pokemon Red</div>
+        </div>
+    <div id="console-controls">
+        <button class="button-controls" id="back">back</button>
+        <button class="button-controls letter" id="A">A</button>
+        <button class="button-controls letter" id="B">B</button>
+    </div>
+        <div id="console-body">
+            <div class="console-box"><button class="button-option" id="routes">Routes</button></div>
+            <div class="console-box"><button class="button-option" id="gyms">Gyms</button></div>
+            <div class="console-box"><button class="button-option" id="poke-center">Poke Center</button></div>
+            <div class="console-box"><button class="button-option" id="poke-store">Poke Store</button></div>
+        </div>
+    </div>
+    
+    
+    <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+    <script src="globals.js"></script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
